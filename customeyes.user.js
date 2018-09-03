@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Customeyes Bookmarks
+// @name         CustomEyes Integration
 // @namespace    https://the-eye.eu/
-// @version      0.2
+// @version      0.3
 // @description  File browsing UI enhancements
-// @author       You
-// @match        https://the-eye.eu/*
+// @author       Nem3sis, oduska
+// @match        https://the-eye.eu/public/*
 // @grant        none
 // ==/UserScript==
 
@@ -12,10 +12,16 @@
 
 // Add stylesheet to head
 $.ajax({
-    url: "//raw.githubusercontent.com/oduska/customeyes/master/customeyes.css",
+    url: "//raw.githubusercontent.com/Nem3sisTE/customeyes/master/customeyes.css",
     success: function(data) {
         $("<style></style>").appendTo("head").html(data);
     }
+});
+
+$('.directory.status .content').after('<button class="ui button" id="customize"><i class="icon paint brush"></i> Customize Layout</button>');
+
+$( "#customize" ).click(function() {
+  $( ".customeyes-toolbar" ).toggle( "slow", function() {});
 });
 
 // Directory/file type icons
@@ -37,7 +43,7 @@ var icons = '<svg style="display: none;" class="mimetype-icons" xmlns="http://ww
             '</svg>';
 
 // Build toolbar object
-var toolbar = '<div class="customeyes-toolbar">' +
+var toolbar = '<div class="customeyes-toolbar" style="display: none;">' +
               '<div class="settings-group">' +
               '<h3>Icons</h3>' +
               '<div class="option-group"><input type="checkbox" id="enable-icons"> <label for="enable-icons">Enable</label></div>' +
