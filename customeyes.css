@@ -1,3 +1,31 @@
+/*
+    Changes made for the official version
+*/
+
+button.ui.button {
+    background-color: #36393e;
+}
+button.ui.button:hover {
+    background-color: #44484e;
+    color: white;
+}
+button.ui.button:active {
+    background-color: #36393e;
+    color: white;
+}
+button.ui.button:focus {
+    background-color: #36393e;
+    color: white;
+}
+button.ui.button:visited {
+    background-color: #36393e;
+    color: white;
+}
+
+/*
+    END Changes
+*/
+
 .customeyes-files .single-item:not(:first-child) {
     text-align: right;
     position: relative;
